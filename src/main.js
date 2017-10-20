@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './components/App.vue'
 import VueRouter from 'vue-router'
-import { firebaseapp } from './firebaseApp'
+import { firebaseApp } from './firebaseApp'
 
 
 Vue.use(VueRouter)
@@ -19,7 +19,11 @@ const router = new VueRouter({
 
 firebaseApp.auth().onAuthStateChanged(user => {
   //If do get a use, navigate to dashboard
-
+  if (user) {
+    router.push('/dashboard')//Navigate to a new page and push to the top of current one, forming a stack
+  } else {
+    router.replace('/signin')//Replace the component at beginning
+  }
   //If not, navigate to sign in page
 })
 
