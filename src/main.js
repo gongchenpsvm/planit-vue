@@ -21,6 +21,7 @@ const router = new VueRouter({
 firebaseApp.auth().onAuthStateChanged(user => {
   //If do get a use, navigate to dashboard
   if (user) {
+    store.dispatch('signIn', user)//Now have user within our store
     router.push('/dashboard')//Navigate to a new page and push to the top of current one, forming a stack
   } else {
     router.replace('/signin')//Replace the component at beginning
