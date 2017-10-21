@@ -7,7 +7,7 @@ const config = {
     projectId: "planit-vue",
     storageBucket: "planit-vue.appspot.com",
     messagingSenderId: "220762772939"
-  };
+};
 
-  export const firebaseApp = firebase.initializeApp(config)
-  
+export const firebaseApp = firebase.initializeApp(config)
+export const eventsRef = firebaseApp.database().ref().child('events')
