@@ -31,7 +31,7 @@ export default {
     AddEvent,
     EventItem
   },
-  mounted() {
+  mounted() {//Called evety time when the Dashboard component loaded
     eventsRef.on('value', snap => {
       let events = []
       snap.forEach(event => {

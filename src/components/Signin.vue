@@ -42,7 +42,7 @@ export default {
   methods: {
     signIn() {
       firebaseApp.auth().signInWithEmailAndPassword(this.email, this.password)
-      .catch(error => {
+      .catch(error => {//If user types in non-existing email and passowrd
         this.error = error
       })
     }

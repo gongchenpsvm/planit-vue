@@ -33,7 +33,7 @@ export default {
       event: {
         title: '',
         description: '',
-        data: '',
+        date: '',
         location: '',
         email: ''
       },
